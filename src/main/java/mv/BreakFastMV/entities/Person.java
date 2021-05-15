@@ -29,4 +29,7 @@ public class Person {
     private ArrayList<Food> foodToBring;
 
 
+    public Long getId() {
+        return this.id;
+    }
 }
