@@ -1,13 +1,11 @@
 package mv.BreakFastMV.entities;
 
-import io.micrometer.core.lang.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Builder
@@ -25,9 +23,8 @@ public class Person {
     @Column(nullable = false)
     private int cpf;
 
-    @Column(nullable = false)
-    private ArrayList<Food> foodToBring;
-
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    private List<Food> foodToBring;
 
     public Long getId() {
         return this.id;

@@ -28,8 +28,9 @@ public class PersonDTO {
     @CPF
     private Integer cpf;
 
-    @Size(max = 30)
-    private String foodToBring;
+    @Valid
+    @NotEmpty
+    private List<FoodDTO> foodToBring;
 
 
 }
