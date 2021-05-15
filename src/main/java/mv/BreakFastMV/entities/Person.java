@@ -1,12 +1,13 @@
 package mv.BreakFastMV.entities;
 
+import io.micrometer.core.lang.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.ArrayList;
 
 @Entity
 @Builder
@@ -14,7 +15,9 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 public class Person {
 
-    //private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -23,7 +26,7 @@ public class Person {
     private int cpf;
 
     @Column(nullable = false)
-    private String foodToBring;
+    private ArrayList<Food> foodToBring;
 
 
 }
