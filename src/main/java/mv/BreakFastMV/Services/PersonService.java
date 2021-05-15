@@ -6,6 +6,7 @@ import mv.BreakFastMV.Mapper.PersonMapper;
 import mv.BreakFastMV.dto.request.PersonDTO;
 import mv.BreakFastMV.dto.response.MessageResponseDTO;
 import mv.BreakFastMV.entities.Person;
+import mv.BreakFastMV.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonService {
 
-    private final PersonRepository personRepository;
+    private final   PersonRepository personRepository;
 
     private final PersonMapper personMapper;
 

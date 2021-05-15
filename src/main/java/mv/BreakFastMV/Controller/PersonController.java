@@ -16,6 +16,6 @@ public class PersonController {
 
     public String create(PersonDTO personDTO) {
 
-        return "Tudo ok!";
+
     }
 }
